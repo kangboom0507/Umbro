@@ -1,0 +1,692 @@
+//공통
+.sc-title {
+  position: relative;
+  display: inline-block;
+  font-size: 31px;
+  line-height: 58px;
+  font-weight: 700;
+
+  @include pc { font-size: 22px;}
+
+}
+
+.sub-box { 
+  position: absolute; 
+  width: 250px;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  padding: 5px;
+  background: #fff;
+  align-items: center;
+  
+  @include tablet{ display: none;}
+
+  .txt-box { 
+   
+    .name { 
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    .sell { 
+      display: block;
+      font-size: 13px;
+      color: #666;
+    }
+  }
+
+  .img-box { 
+    width: 62px;
+    margin-left: auto;
+    padding: 0;
+    
+  }
+}
+
+.title {
+  position: relative;
+  display: inline-block;
+  font-size: 31px;
+  line-height: 58px;
+  font-weight: 700;
+
+}
+
+.link {
+  line-height: 25px;
+  font-size: 16px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #fff;
+  font-weight: 600;
+
+  @include pc { font-size: 12px;}
+  
+
+}
+
+//visual 
+.sc-visual {
+    height: 100%;
+    display: flex;
+    position: relative;
+    height: calc(100vh - 40px);
+
+    @include tablet {  flex-direction: column; }
+
+  .visual-box {
+    width: 66.5%; height: 100%;
+
+    @include tablet { width: 100%;}
+
+    .img-box {
+      width: 100%; height: 100%; overflow: hidden;
+      
+      img{width: 100%; height: 100%; object-fit: cover;}
+
+    }
+    
+    .txt-box { 
+      position: absolute;
+      bottom: 0;
+      left: 56px;
+      color: #fff;
+      padding: 70px 0;
+
+      @include mobile { left: 10px; padding: 30px;}
+      
+      .title {
+         display: block; font-size: 39px; font-weight: 700; line-height: 48px;
+        
+         @include tablet { font-size: 30px;}
+         @include mobile { font-size: 16px; line-height: 25px;}
+
+        }
+      .link {
+        display: inline-block;  margin: 32px 0 0;
+        
+        @include mobile { margin: 10px 0 0;}
+      }
+    }
+  }
+
+  .sale-box { 
+  flex:1; overflow: hidden; position: relative; 
+  background-color: #000; color: #fff; text-align: center; opacity: .9;
+
+  @include tablet { width: 100%; height: 100%;}
+
+  .txt-box { 
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+
+    .title {font-size: 31px; line-height: 48px; }
+    .desc { font-size: 16px; line-height: 25px; margin-top: 8px; }
+    .link { 
+      &.link::before {
+          content: ''; display: block;
+          background: #fff; width: 1px;
+          height: 90px; margin: 20px auto; opacity: 0.2;
+      }
+    }
+  }
+  }
+}
+
+
+//directionality
+.sc-directionality { 
+  padding: 96px 0; background: #f7f5f0;
+  text-align: center;
+
+  .txt-box{ 
+    display: inline-block; max-width: 656px;
+
+    @include mobile { max-width: 200px;}
+
+    .sc-title{
+      font-size: 39px; font-weight: 700;
+      
+      @include tablet { font-size: 30px;}
+      @include mobile { font-size: 16px;}
+
+    }
+    .desc { 
+      font-size: 20px; margin: 20px 0; color: #666; font-weight: 300; line-height: 38px;
+      
+      @include tablet { font-size: 16px;}
+      @include mobile { font-size: 12px; line-height: 20px;}
+
+    }
+    .link { 
+      margin-top: 23px; border-bottom: 1px solid #000; } 
+  }
+
+ }
+
+
+ //new 
+.sc-new { 
+  padding: 160px 0; position: relative;
+
+  @include pc {padding-left: 50px;}
+
+  .new-wrap { 
+  padding-left:calc(50% - 550px);
+  padding-right:calc(15%);
+
+  .sc-title{ 
+    font-size: 31px; font-weight: 700; position: relative;
+    display: inline-block; margin-bottom: 64px;
+
+    @include mobile { margin-bottom: 30px; font-size: 16px;}
+
+    &.sc-title::after{
+      content: '';
+      display: inline-block;
+      width: 200px;
+      height: 1px;
+      background-color: #000;
+      margin-left: 48px;
+      position: absolute;
+      top: 50%;
+
+      @include mobile { display: none;}
+    }
+  }
+
+  .new-list{
+    display: flex;
+
+    .new-item{
+      margin-right: 50px;
+
+      @include mobile { margin-right: 20px;}
+
+      .img-box { margin-bottom: 26px; width: 100%; height: auto;}
+      .txt-box { 
+
+        .strong { 
+          display: block; font-size: 16px; margin-bottom: 10px; font-weight: 200;
+
+          @include mobile { font-size: 12px;}
+          
+        }
+        .desc { font-size: 16px;
+        
+          @include mobile { font-size: 12px;}
+        }
+      }
+    }
+  }
+  .link { 
+    display: inline-block; margin-top: 64px; border-bottom: 1px solid #000;
+    
+    @include pc { margin-top: 30px;}
+    @include mobile {font-size: 10px;}
+  }
+  .pagation { 
+    position: absolute; top: 0; right: 15%;
+
+    @include mobile { top:20px;}
+
+    .btn { 
+      width: 40px;
+      height: 40px;
+      float: left;
+      border:1px solid #666;
+      text-align: center;
+      line-height: 40px;
+      box-sizing: border-box;
+
+      @include mobile { width: 20px; height: 20px;}
+
+      &::after{
+        content: '';
+        width: 10px;height: 15px;
+        display: inline-block;
+        padding-top: 20px;
+        vertical-align: top;
+        background: url(../images/logo/arrow.svg) no-repeat 100%;
+
+        @include mobile { width: 5px; height: 8px; padding-top: 11px;}
+
+      }
+
+      &.prev {
+        margin-right: 20px;
+        &::after{
+            transform: rotate(180deg);
+        }
+      }
+    }
+  }
+  }
+}
+
+
+//find 
+.find-area {
+  display: flex; position: relative;
+
+  @include tablet {  flex-direction: column-reverse;}
+
+  .find-wrap { 
+    width: 50%;
+    padding: 138px 104px 130px 72px;
+    box-sizing: border-box;
+    background: #f7f5f0;  
+
+    @include tablet { width: 100%;}
+    @include mobile { padding: 69px 52px 65px 36px;}
+
+    .find-box {
+       max-width: 432px; margin: 0 auto; 
+
+       .sc-title { 
+        display: inline-block; font-size: 13px; margin-bottom: 18px; color: #666;
+        
+        @include tablet { font-size: 30px; margin-bottom: 15px; line-height: 1.5;}
+        @include mobile { font-size: 8px; }
+      }
+       .title { 
+        font-size: 39px; margin-bottom: 52px;
+        
+        @include mobile { margin-bottom: 20px; font-size: 16px; line-height: 20px;}
+
+      }
+    }
+  }
+    .find-item { 
+      position: relative;
+      font-size: 16px; 
+      font-weight: 600;
+
+      @include mobile { font-size: 12px; font-weight: 400;}
+
+      .link-find {
+         position: relative; display: block; padding: 15px 0; 
+
+         @include mobile { padding: 5px 0;}
+        
+         &::after { 
+          content: '';
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          background: url(../images/logo/arrow.svg) no-repeat 100%;
+          top: 50%;
+          right: 0;
+         }
+      }
+
+      +.find-item { padding-top: 15px;}
+    }
+
+  .img-wrap { 
+    flex: 1;
+    position: relative;
+    
+    .bg-img-box { 
+      width: 100%;
+      height: 100%;
+    }
+  }
+ }
+
+ 
+//shirt
+.sc-shirt { 
+  width: 100%; padding: 160px 56px; margin: 0 auto; box-sizing: border-box;
+
+  @include pc{ padding: 50px 20px;}
+
+.shirt-wrap {
+   display: flex; 
+
+   @include mobile {flex-direction: column;}
+
+}
+
+  .shirt-left { 
+    width: 50%;
+    margin-right: 64px;
+    box-sizing: border-box;
+
+    @include mobile { width: 100%;}
+
+    .txt-box {
+      margin: 69px 69px 0 0;
+      padding-left: 68px;
+
+      @include tablet { display: flex; flex-direction: column;}
+      @include mobile { margin: 0; padding: 0;}
+
+      .title {
+        margin-bottom: 40px; font-size: 37px; 
+        
+        @include pc{ font-size: 20px; }
+        @include mobile { line-height: 20px; font-size: 16px; margin-bottom: 20px;}
+      }
+      .link-shop { 
+        display: inline-block;
+        width: 140px;
+        height: 47px;
+        background: #000;
+        color: #fff;
+        text-align: center;
+        line-height: 47px;
+        margin-bottom: 60px;
+
+        @include mobile {margin: 0 auto 30px; }
+
+      }
+    }
+  }
+
+  .shirt-right { 
+    position: relative;
+    width: calc(50% - 20px);
+    margin-left: 64px;
+    box-sizing: border-box;
+
+    @include tablet { width: 100%;}
+    @include mobile { margin: 0;}
+
+    .right-wrap {position: relative; }
+      .shirt-img {
+        position: relative; 
+        padding-bottom: 100%;
+
+        img { position: absolute; top: 0; left: 0; width: 100%; }
+     }
+
+     .desc { 
+      line-height: 38px;
+      font-size: 20px;
+      color: #666;
+      margin: 172px 172px 172px 0;
+      padding: 0 0 0 56px;
+      max-width: 432px;
+
+      @include pc { margin: 100px 100px 100px 0;}
+      @include tablet{ font-size: 15px; }
+      @include mobile{ font-size: 11px; line-height: 30px; margin: 50px 50px 100px 0; }
+     }
+  }
+}
+
+
+//shoes
+.shoes-wrap {
+   width: 100%; height: 100vh; position: relative; 
+
+   .img { width: 100%;  object-fit: cover;}
+
+   .txt-box { 
+    position: absolute;
+    padding: 0 0 80px 56px;
+    bottom: 0;
+    color: #fff;
+    box-sizing: border-box;  
+
+    @include mobile {padding: 0; bottom:50px;}
+
+    .title {
+      max-width: 500px; display: block;
+      
+      @include pc { font-size: 25px;}
+      @include mobile { font-size: 16px; max-width: 320px; line-height: 1.5;} 
+
+    }
+    .link { 
+      display: inline-block; margin-top: 32px; 
+      
+      @include mobile { margin-top: 10px;}
+
+    }
+    }
+   .sub-img-box {
+    position: absolute;
+    right: 10px;
+    bottom: 80px;
+
+    @include mobile { bottom: 10px;}
+
+    img{
+      background: #fff; width: 52px; padding: 3px;
+      
+      @include mobile {width: 20px; }
+    }
+   }
+}
+
+
+//best 
+.sc-best { padding: 160px 0; overflow: hidden;
+  
+  .best-left {
+    width: 50%;
+    float: left;
+    height: 100%;
+
+    @include mobile { width: 100%; }
+
+   }
+  .best-right {
+    width: 50%;
+    overflow: hidden;
+
+    @include mobile {width: 100%;}
+
+    .text-box { 
+      margin-bottom: 68px;
+      padding: 50px 106px 50px 120px;
+
+      @include pc { padding: 25px 50px 25px 60px; margin-bottom: 34px;  }
+      @include mobile { display: none;}
+
+      .desc { 
+        font-size: 16px; color: #666; margin-top: 12px;
+        
+        @include pc { font-size: 15px; line-height: 1.5;}
+
+      }
+      .link { display: inline-block; margin-top: 32px; border-bottom: 1px solid #000;}
+    }
+   }
+   
+   .best-box {
+      width: 100%; padding: 0 120px; 
+
+      @include mobile { margin: 0; padding: 0;}
+      
+      .txt-box { 
+        margin-top: 26px;
+
+        .strong { 
+          display: block; font-size: 16px; margin-bottom: 10px; font-weight: 200;
+          
+          @include pc { font-size: 15px;}
+        }
+        .desc { 
+          font-size: 16px; 
+        
+          @include pc { font-size: 12px;}
+
+        }
+      }
+   }
+}
+
+
+//collaboration
+.collaboration-wrap {
+  display: flex;
+  padding: 96px 56px;
+  background: #f7f5f0;
+
+  @include tablet{ flex-direction: column; }
+
+  .txt-box {
+    width: 40%;
+    margin-bottom: 31px;
+    padding-left: 40px;
+    box-sizing: border-box;
+
+    @include pc { width: 60%;}
+    @include tablet { width: 100%; padding: 0;}
+    
+    .sc-title { 
+
+      @include mobile { padding-left: 40px;}
+     }
+    .desc {
+      margin-top: 26px;
+      color: #666;
+      font-size: 20px;
+      line-height: 38px;
+      font-weight: 400;
+      max-width: 400px;
+
+      @include pc { font-size: 14px; }
+      @include tablet{ margin-top: 13px; max-width: none; br{display: none;} }
+      @include mobile { text-align: center; font-size: 10px; line-height: 20px;}
+
+      }
+    .link { 
+      display: inline-block; border-bottom: 1px solid #000; margin-top: 40px; 
+      
+      @include tablet { margin-top: 20px; }
+      @include mobile { font-size: 8px; margin: 10px 0 0 90px;}
+
+    }
+    }
+
+    .inner-box { 
+      flex: 1;
+      display: flex;
+      
+      .inner {
+         width: 400px; height: 200px;
+
+         @include pc { width: 300px; margin-right: 20px;}
+         @include tablet { width: 400px; margin:0 0 40px 0; }
+
+        .desc {
+          font-size: 16px; margin-top: 15px;
+          
+          @include pc { font-size: 14px;}
+
+        }
+        img { width: 100%; height: 100%; object-fit:cover;}
+      }
+    }
+  }
+
+
+//info
+.sc-info { padding: 160px 0 96px;
+
+  .info-wrap {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 56px;
+    display: flex;
+    text-align: center;
+    letter-spacing: -0.8px;
+    box-sizing: border-box;
+
+    @include tablet { flex-direction: column; text-align-last: left; }
+
+  }
+
+    .info-box { 
+      display: block;
+      padding: 0 92.5px;
+      margin: 0 0 64px;
+
+      @include tablet { border-bottom: 1px solid #e6e6e6; padding:0 0 40px 0;}
+
+      &.info-box +.info-box {
+        border-left: 1px solid #e6e6e6;
+
+        @include tablet { border-left:none;}
+
+      }
+      
+      .sc-title {font-size: 25px; margin: 0 0 16px; }
+      .desc {font-size: 15px; color: #666; line-height: 24px;}
+    }
+}
+
+
+//banner 
+.banner {
+  position: relative;
+  padding: 0 20%;
+  padding-bottom: 100px;
+  
+  .frame-wrap { 
+    margin: 0 auto;
+    padding-bottom: 56%;
+    position: relative;
+
+    iframe { width: 100%; position: absolute; height: 100%;}
+  }
+ }
+
+
+//email
+.sc-email { 
+  width: 100%;
+  padding: 160px 0;
+  background: #f7f5f0;
+  text-align: center;
+
+  @include mobile { padding: 100px 0;}
+
+  .email-wrap { 
+    display: inline-block; 
+    max-width: 768px;
+    padding: 0 56px;
+    box-sizing: border-box;
+
+    @include mobile { padding:0 20px;}
+
+    .desc { 
+      font-size: 20px;
+      margin-top: 20px;
+      color: #666; 
+      line-height: 38px;
+
+      @include mobile { font-size: 12px; line-height: 20px; }
+    }
+
+    .touch-search{ background-color: #ffffff80; margin-top: 64px; display: flex;
+    
+      .touch-selet {
+        outline: none;
+        flex: 1;
+        padding: 0 16px;
+        border: none;
+
+        @include mobile { padding: 0 8px;}
+    }
+
+    .btn-touch {
+        outline: none;
+        width: 60px;
+        height: 60px;
+        box-sizing: border-box;
+        background: none;
+        border: none;
+
+        @include mobile { width: 50px; height: 50px;}
+     }
+    }
+  }
+}
+
+
